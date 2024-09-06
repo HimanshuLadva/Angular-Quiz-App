@@ -1,0 +1,64 @@
+<h1 style="text-align: center">Generate Question's</h1>
+<div class="api--helper">
+  <h1>API Helper</h1>
+  <form (ngSubmit)="getFormValue(loginForm.value)" #loginForm="ngForm">
+    <label for="amount">Number Of questions:</label>
+   <div class="w100"> 
+    <input type="number" name="amount" #amount [(ngModel)]="defaultNumber" min="1" max="50"> 
+   </div>
+  <br>
+  <label for="category">Select Category:</label>
+  <div class="w100">
+    <select name="category" #cate ngModel>
+      <option value="any" [ngValue]="''">Any Category</option>
+      <option value="9">General Knowledge</option>
+      <option value="10">Entertainment: Books</option>
+      <option value="11">Entertainment: Film</option>
+      <option value="12">Entertainment: Music</option>
+      <option value="13">Entertainment: Musicals &amp; Theatres</option>
+      <option value="14">Entertainment: Television</option>
+      <option value="15">Entertainment: Video Games</option>
+      <option value="16">Entertainment: Board Games</option>
+      <option value="17">Science &amp; Nature</option>
+      <option value="18">Science: Computers</option>
+      <option value="19">Science: Mathematics</option>
+      <option value="20">Mythology</option>
+      <option value="21">Sports</option>
+      <option value="22">Geography</option>
+      <option value="23">History</option>
+      <option value="24">Politics</option>
+      <option value="25">Art</option>
+      <option value="26">Celebrities</option>
+      <option value="27">Animals</option>
+      <option value="28">Vehicles</option>
+      <option value="29">Entertainment: Comics</option>
+      <option value="30">Science: Gadgets</option>
+      <option value="31">Entertainment: Japanese Anime &amp; Manga</option>
+      <option value="32">Entertainment: Cartoon &amp; Animations</option>
+    </select>
+  </div>
+<br>
+  <label for="difficulty">Select Difficulty:</label>
+  <div class="w100">
+    <select name="difficulty" #diff ngModel>
+      <option value="any" [ngValue]="''">Any Difficulty</option>
+      <option value="easy">Easy</option>
+      <option value="medium">Medium</option>
+      <option value="hard">Hard</option>
+    </select>
+  </div>
+<br>
+  <label for="type">Select Type:</label>
+  <div class="w100">
+    <select name="type" #type ngModel>
+      <option value="any" [ngValue]="''">Any Type</option>
+      <option value="multiple">Multiple Choice</option>
+      <option value="boolean">True / False</option>
+    </select>
+  </div>
+<br>
+  <div class="w100">
+    <button class="btn">start quiz</button>
+  </div>
+  </form>
+</div>

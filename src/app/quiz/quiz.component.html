@@ -1,0 +1,33 @@
+<div *ngIf="loaderShow">
+  <div class="spinner-border" role="status">  
+      <span class="sr-only" id="loading"></span>
+  </div>
+</div>
+<div class="quiz-container center" *ngIf="questionShow">
+    <div class="quiz-header">
+      <h3 id="question">
+        <h2>Question:{{resultArray.length}}/{{quizLength}}</h2>
+        <i>{{currentQuestion.question}}</i> 
+      </h3>
+      <ol type="none" id="options" type="A">
+        <li *ngFor="let option of currentQuestion.options;let indexOfelement = index" (click)="changeQuestion(option,currentQuestion.question)">{{option}}</li>
+      </ol>
+  </div>
+  </div>
+  
+  <div class="main-result center" *ngIf="resultShow">
+    <div class="resultShow">
+        <ol *ngFor="let item of resultArray; let indexOfelement1 = index" type="A">
+          <h4>{{indexOfelement1+1}}   {{item.question}}</h4>
+          <li *ngFor="let option of item.options" [ngClass]="matchResult(indexOfelement1,option)">{{option}}</li>
+        </ol>
+    </div>
+    <div class="result">
+      <div class="showRE">You scored {{getScore()}} out of {{quizLength}}</div> 
+    </div>
+    <div class="button">
+      <button (click)="resetQuiz()" class="btn">Reset Quiz</button> 
+    </div>
+  </div>
+ 
+
